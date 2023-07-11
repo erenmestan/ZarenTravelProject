@@ -1,29 +1,30 @@
-﻿@model HotelSearchResponseVMOperationResult
+﻿
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+@model HotelSearchResponseVMOperationResult
 @if (Model != null)
 {
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>Title</td>
-                <td>Value</td>
+                <td>Id</td>
+                <td>Hotel</td>
                 <td>MinPrice</td>
-                <td>MaxPrice</td>>
+                <td>MaxPrice</td>
             </tr>
         </thead>
         <tbody>
-        @if (Model.data != null)
+        @if (Model.Data != null)
         {
-            @foreach (var item in Model.data.results)
+            @foreach (var item in Model.Data.Results)
             {
                 <tr>
-                    <td>@item.id</td>
-                    <td>@item.name</td>
-                    <td>@item.minPrice.price</td>
-                    <td>@item.maxPrice.price</td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.MinPrice.Price</td>
+                    <td>@item.MaxPrice.Price</td>
                 </tr>
             }
         }

@@ -14,37 +14,36 @@ namespace ZarenTravelProject.Controllers
         {
             _travelService = travelService;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
 
         }
-
-
         public async Task<IActionResult> SearchLocation(LocationSearchRequestVM locationSearchRequestVm)
         {
             var response = await _travelService.GetHotelLocations(locationSearchRequestVm);
             return PartialView("SearchLocation",response);
-
         }
-
         public async Task<IActionResult> SearchHotelWithLocation(string id)
         {
-            HotelSearchRequestVM hotelSearchRequestVm = new HotelSearchRequestVM();
-            hotelSearchRequestVm.locationId = id;
-            hotelSearchRequestVm.checkIn = DateTime.Now.AddDays(1);
-            hotelSearchRequestVm.checkOut = DateTime.Now.AddDays(5);
-            hotelSearchRequestVm.query="string";
-            hotelSearchRequestVm.currency = "EUR";
-            hotelSearchRequestVm.culture = "tr-TR";
-            hotelSearchRequestVm.nationality = "TR";
-            hotelSearchRequestVm.page = 1;
-            hotelSearchRequestVm.pageSize = 100;
-            OccupantsVM occupants = new OccupantsVM();
-            occupants.adults = 1;
+            var hotelSearchRequestVm = new HotelSearchRequestVM
+            {
+                LocationId = id,
+                CheckIn = DateTime.Now.AddDays(1),
+                CheckOut = DateTime.Now.AddDays(5),
+                Query="string",
+                Currency = "EUR",
+                Culture = "tr-TR",
+                Nationality = "TR",
+                Page = 1,
+                PageSize = 100
+            };
+            var occupants = new OccupantsVM
+            {
+                Adults = 1
+            };
 
-            hotelSearchRequestVm.occupants = new List<OccupantsVM>();
-            hotelSearchRequestVm.occupants.Add(occupants);
+            hotelSearchRequestVm.Occupants = new List<OccupantsVM> {occupants};
             var response = await _travelService.GetHotelLocations(hotelSearchRequestVm);
 
             return PartialView("SearchHotel", response);

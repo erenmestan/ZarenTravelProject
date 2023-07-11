@@ -2,9 +2,9 @@
 {
     public class OccupantsVM
     {
-        public int adults { get; set; }
-        public List<int> children { get; set; }
-        public int infants { get; set; }
+        public int Adults { get; set; }
+        public List<int> Children { get; set; }
+        public int Infants { get; set; }
     }
 
 }

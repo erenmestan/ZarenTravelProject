@@ -19,22 +19,21 @@ namespace ZarenTravelProject.Controllers
         }
         public async Task<IActionResult> SearchHotel(HotelSearchRequestVM hotelSearchRequestVm)
         {
-            hotelSearchRequestVm.query="string";
-            hotelSearchRequestVm.currency = "EUR";
-            hotelSearchRequestVm.culture = "tr-TR";
-            hotelSearchRequestVm.nationality = "TR";
-            hotelSearchRequestVm.page = 1;
-            hotelSearchRequestVm.pageSize = 100;
-            OccupantsVM occupants = new OccupantsVM();
-            occupants.adults = 1;
+            hotelSearchRequestVm.Query="string";
+            hotelSearchRequestVm.Currency = "EUR";
+            hotelSearchRequestVm.Culture = "tr-TR";
+            hotelSearchRequestVm.Nationality = "TR";
+            hotelSearchRequestVm.Page = 1;
+            hotelSearchRequestVm.PageSize = 100;
+            var occupants = new OccupantsVM
+            {
+                Adults = 1
+            };
 
-            hotelSearchRequestVm.occupants = new List<OccupantsVM>();
-            hotelSearchRequestVm.occupants.Add(occupants);
+            hotelSearchRequestVm.Occupants = new List<OccupantsVM> {occupants};
             var response = await _travelService.GetHotelLocations(hotelSearchRequestVm);
-  
-            return PartialView("SearchHotel", response);
 
+            return PartialView("SearchHotel", response);
         }
-        
     }
 }

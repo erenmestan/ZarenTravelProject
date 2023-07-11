@@ -2,11 +2,11 @@
 {
     public class HotelSearchResponse
     {
-        public List<HotelResult> results { get; set; }
-        public int provider { get; set; }
-        public DateTime expiresOn { get; set; }
-        public string searchId { get; set; }
-        public string cacheKey { get; set; }
+        public List<HotelResult> Results { get; set; }
+        public int Provider { get; set; }
+        public DateTime ExpiresOn { get; set; }
+        public string SearchId { get; set; }
+        public string CacheKey { get; set; }
    
     }
 }

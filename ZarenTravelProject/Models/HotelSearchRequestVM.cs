@@ -2,16 +2,16 @@
 {
     public class HotelSearchRequestVM
     {
-        public int page { get; set; }
-        public int pageSize { get; set; }
-        public string query { get; set; }
-        public string locationId { get; set; }
-        public string currency { get; set; }
-        public string culture { get; set; }
-        public string nationality { get; set; }
-        public int sortBy { get; set; }
-        public DateTime checkIn { get; set; }
-        public DateTime checkOut { get; set; }
-        public List<OccupantsVM> occupants { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+        public string Query { get; set; }
+        public string LocationId { get; set; }
+        public string Currency { get; set; }
+        public string Culture { get; set; }
+        public string Nationality { get; set; }
+        public int SortBy { get; set; }
+        public DateTime CheckIn { get; set; }
+        public DateTime CheckOut { get; set; }
+        public List<OccupantsVM> Occupants { get; set; }
     }
 }

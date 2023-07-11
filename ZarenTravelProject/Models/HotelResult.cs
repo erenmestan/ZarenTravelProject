@@ -2,10 +2,10 @@
 {
     public class HotelResult
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public HotelPrice minPrice { get; set; }
-        public HotelPrice maxPrice { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public HotelPrice MinPrice { get; set; }
+        public HotelPrice MaxPrice { get; set; }
     }
 }

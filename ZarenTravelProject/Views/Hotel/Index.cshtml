@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
 
 @model HotelSearchRequestVM
@@ -13,19 +14,19 @@
         <div class="col-md-6"></div>
         <form asp-action="Index" method="post" asp-controller="Hotel">
             <div class="form-group">
-                <label asp-for="locationId"></label>
-                <input asp-for="locationId" class="form-control" />
-                <span asp-validation-for="locationId" class="text-danger"></span>
+                <label asp-for="LocationId"></label>
+                <input asp-for="LocationId" class="form-control" />
+                <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="checkIn"></label>
-                <input asp-for="checkIn" class="form-control" />
-                <span asp-validation-for="checkIn" class="text-danger"></span>
+                <label asp-for="CheckIn"></label>
+                <input asp-for="CheckIn" class="form-control" />
+                <span asp-validation-for="CheckIn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="checkOut"></label>
-                <input asp-for="checkOut" class="form-control" />
-                <span asp-validation-for="checkOut" class="text-danger"></span>
+                <label asp-for="CheckOut"></label>
+                <input asp-for="CheckOut" class="form-control" />
+                <span asp-validation-for="CheckOut" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Search" class="btn-primary" />
@@ -33,6 +34,3 @@
         </form>
     </div>
 }
-
-
-<partial name="SearchHotel" />

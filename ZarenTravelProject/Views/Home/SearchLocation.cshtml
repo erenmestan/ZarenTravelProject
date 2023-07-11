@@ -1,16 +1,15 @@
-﻿@model ZarenTravelProject.Models.ListedItemsResponseOperationResult?
-
-@{
+﻿@{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+@model ZarenTravelProject.Models.ListedItemsResponseOperationResult?
 @if (Model != null)
 {
     <table class="table table-striped">
         <thead>
         <tr>
-            <td>Title</td>
-            <td>Value</td>
+            <td>Location</td>
+            <td>locationId</td>
             <td>Description</td>
             <td>Type</td>
             <td>Provider</td>
