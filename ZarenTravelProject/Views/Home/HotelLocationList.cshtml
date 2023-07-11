@@ -1,0 +1,32 @@
+﻿@model ZarenTravelProject.Models.ListedItemsResponseOperationResult?
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Value</td>
+        <td>Description</td>
+        <td>Type</td>
+        <td>Provider</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Data.Items)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Value</td>
+            <td>@item.Description</td>
+            <td>@item.Type</td>
+            <td>@item.Provider</td>
+        </tr>
+    }
+    </tbody>
+</table>

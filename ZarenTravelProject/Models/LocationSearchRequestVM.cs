@@ -4,7 +4,7 @@
     {
         public string? Query { get; set; }
         public int Type { get; set; }
-        public int Status { get; set; }
+        public int Provider { get; set; }
 
     }
 }

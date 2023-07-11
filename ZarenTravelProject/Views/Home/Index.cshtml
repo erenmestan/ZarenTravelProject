@@ -1,8 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model LocationSearchRequestVM
+<h1>Search Hotel Location</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@using (Html.BeginForm("SearchLocation", "Home", FormMethod.Post))
+{
+    
+    <div class="row">
+        <div class="col-md-6"></div>
+        <form asp-action="Index" method="post" asp-controller="Home">
+            <div class="form-group">
+                <label asp-for="Query"></label>
+                <input asp-for="Query" class="form-control" />
+                <span asp-validation-for="Query" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Provider"></label>
+                <input asp-for="Provider" class="form-control" />
+                <span asp-validation-for="Provider" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn-primary" />
+            </div>
+        </form>
+    </div>
+}
+
+<partial name="SearchLocation" />

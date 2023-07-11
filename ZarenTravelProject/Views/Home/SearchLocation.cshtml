@@ -1,0 +1,35 @@
+﻿@model ZarenTravelProject.Models.ListedItemsResponseOperationResult?
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Value</td>
+            <td>Description</td>
+            <td>Type</td>
+            <td>Provider</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Data.Items)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Value</td>
+                <td>@item.Description</td>
+                <td>@item.Type</td>
+                <td>@item.Provider</td>
+                <td>
+                    <a class="btn btn-warning" asp-controller="Home" asp-action="SearchHotelWithLocation" asp-route-id="@item.Value">Hotel</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

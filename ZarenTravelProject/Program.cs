@@ -1,7 +1,11 @@
+using ZarenTravelProject.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<TravelService>(opt => opt.BaseAddress = new Uri(builder.Configuration["BaseUrl"]));
 
 var app = builder.Build();
 

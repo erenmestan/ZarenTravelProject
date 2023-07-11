@@ -1,0 +1,29 @@
+﻿@model HotelSearchResponseVMOperationResult
+
+@if (Model != null)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Value</td>
+            <td>MinPrice</td>
+            <td>MaxPrice</td>>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model.data != null)
+        {
+            @foreach (var item in Model.data.results)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.minPrice.price</td>
+                    <td>@item.maxPrice.price</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}
